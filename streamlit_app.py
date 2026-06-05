@@ -66,46 +66,78 @@ if menu == "⚛️ Tabel Periodik":
         "actinide":"#ff99cc"
     }
 
-    for periode in range(1,8):
+   st.markdown("""
+<style>
 
-        cols = st.columns(18)
+.periodic-table{
+    display:grid;
+    grid-template-columns:repeat(18,60px);
+    gap:4px;
+}
 
-        for golongan in range(1,19):
+.element{
+    height:60px;
+    border-radius:8px;
+    text-align:center;
+    padding:4px;
+    color:black;
+    font-weight:bold;
+}
 
-            match = df[
-                (df["xpos"] == golongan)
-                &
-                (df["ypos"] == periode)
-            ]
+.number{
+    font-size:10px;
+}
 
-            with cols[golongan-1]:
+.symbol{
+    font-size:18px;
+}
 
-                if not match.empty:
+</style>
+""", unsafe_allow_html=True)
 
-                    unsur = match.iloc[0]
+html = '<div class="periodic-table">'
 
-                    warna_unsur = warna.get(
-                        str(unsur["category"]).lower(),
-                        "#eeeeee"
-                    )
+for periode in range(1,8):
 
-                    st.markdown(
-                        f"""
-                        <div style="
-                        background:{warna_unsur};
-                        border-radius:8px;
-                        padding:5px;
-                        text-align:center;
-                        height:85px;">
-                        
-                        <small>{unsur['number']}</small><br>
-                        <h4>{unsur['symbol']}</h4>
-                        <small>{unsur['name']}</small>
+    for golongan in range(1,19):
 
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
+        match = df[
+            (df["xpos"] == golongan)
+            &
+            (df["ypos"] == periode)
+        ]
+
+        if not match.empty:
+
+            unsur = match.iloc[0]
+
+            warna_unsur = warna.get(
+                str(unsur["category"]).lower(),
+                "#eeeeee"
+            )
+
+            html += f"""
+            <div class="element"
+            style="background:{warna_unsur}">
+                <div class="number">
+                    {unsur['number']}
+                </div>
+
+                <div class="symbol">
+                    {unsur['symbol']}
+                </div>
+            </div>
+            """
+
+        else:
+            html += "<div></div>"
+
+html += "</div>"
+
+st.markdown(
+    html,
+    unsafe_allow_html=True
+)
 
                 else:
                     st.write("")
