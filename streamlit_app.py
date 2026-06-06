@@ -5,7 +5,7 @@ import re
 from html import escape
 
 st.set_page_config(
-    page_title="ChemLab",
+    page_title="Periodicalc",
     page_icon="⚛️",
     layout="wide"
 )
