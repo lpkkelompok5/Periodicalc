@@ -23,12 +23,12 @@ st.markdown("""<style>
 
 /* Background halaman — pink sangat muda */
 [data-testid="stAppViewContainer"] {
-    background: linear-gradient(180deg, rgba(255,228,240,0.3) 0%, rgba(255,241,246,0.2) 50%, rgba(255,255,255,0.1) 100%) !important;
+    background: linear-gradient(180deg, rgba(255, 228, 240, 0.65), rgba(255, 240, 246, 0.75), rgba(255, 255, 255, 0.85)) !important;
 }
 
 /* Sidebar — nuansa pastel pink */
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, rgba(255,214,232,0.22) 0%, rgba(248,220,235,0.12) 100%) !important;
+    background: linear-gradient(180deg, rgba(255, 214, 232, 0.55), rgba(252, 228, 236, 0.45)) !important;
 }
 
 /* Modern Pink Sidebar Navigation Styling */
@@ -73,8 +73,8 @@ div[data-testid="stSidebar"] label[data-baseweb="radio"] > div:last-child {
 }
 /* Active Sidebar Button — pink soft highlight */
 div[data-testid="stSidebar"] label[data-baseweb="radio"]:has(input:checked) {
-    background: rgba(255,182,213,0.25) !important;
-    border-color: rgba(219,112,147,0.35) !important;
+    background: rgba(248, 187, 208, 0.45) !important;
+    border-color: rgba(219, 112, 147, 0.45) !important;
     box-shadow: 0 4px 12px rgba(219,112,147,0.1) !important;
     transform: translateX(4px) !important;
 }
@@ -83,29 +83,29 @@ div[data-testid="stSidebar"] label[data-baseweb="radio"]:has(input:checked) > di
 }
 /* Hover State — pink muda */
 div[data-testid="stSidebar"] label[data-baseweb="radio"]:hover {
-    background: rgba(255,214,232,0.25) !important;
-    border-color: rgba(219,112,147,0.25) !important;
+    background: rgba(255, 214, 232, 0.55) !important;
+    border-color: rgba(219, 112, 147, 0.25) !important;
     transform: translateX(2px) !important;
 }
 
 /* ========== Tombol / Button — rose pastel ========== */
 [data-testid="stAppViewContainer"] button,
 [data-testid="stSidebar"] button {
-    background: rgba(255,182,213,0.18) !important;
-    border: 1px solid rgba(219,112,147,0.22) !important;
+    background: rgba(248, 187, 208, 0.38) !important;
+    border: 1px solid rgba(219, 112, 147, 0.42) !important;
     border-radius: 10px !important;
     color: var(--text-color) !important;
     transition: all 0.2s ease !important;
 }
 [data-testid="stAppViewContainer"] button:hover,
 [data-testid="stSidebar"] button:hover {
-    background: rgba(255,182,213,0.32) !important;
-    border-color: rgba(219,112,147,0.38) !important;
+    background: rgba(244, 167, 193, 0.5) !important;
+    border-color: rgba(219,112,147,0.5) !important;
     box-shadow: 0 3px 10px rgba(219,112,147,0.12) !important;
 }
 [data-testid="stAppViewContainer"] button:active,
 [data-testid="stSidebar"] button:active {
-    background: rgba(255,182,213,0.45) !important;
+    background: rgba(244, 167, 193, 0.6) !important;
     transform: scale(0.98) !important;
 }
 
@@ -133,13 +133,13 @@ div[data-testid="stSidebar"] label[data-baseweb="radio"]:hover {
 
 /* ========== Expander Custom Pink Styling ========== */
 div[data-testid="stExpander"] {
-    border: 1.5px solid rgba(219, 112, 147, 0.2) !important;
-    background-color: rgba(255, 255, 255, 0.45) !important;
+    background-color: rgba(252, 228, 236, 0.45) !important;
+    border: 1.5px solid rgba(219, 112, 147, 0.28) !important;
     border-radius: 12px !important;
     box-shadow: 0 4px 12px rgba(219, 112, 147, 0.03) !important;
 }
 div[data-testid="stExpander"] details summary {
-    background-color: rgba(255, 214, 232, 0.15) !important;
+    background-color: rgba(248, 187, 208, 0.35) !important;
     color: var(--text-color) !important;
     border-radius: 12px !important;
     font-weight: 600 !important;
@@ -147,7 +147,7 @@ div[data-testid="stExpander"] details summary {
     border-bottom: none !important;
 }
 div[data-testid="stExpander"] details summary:hover {
-    background-color: rgba(255, 182, 213, 0.25) !important;
+    background-color: rgba(248, 187, 208, 0.45) !important;
 }
 div[data-testid="stExpander"] details summary svg {
     color: rgba(219, 112, 147, 0.8) !important;
@@ -291,7 +291,7 @@ hr {
 .pt-spacer-row .pt-cell,.pt-spacer-row a.pt-link{background:transparent!important;border:none!important;box-shadow:none!important;pointer-events:none}
 
 /* Grid elements with pink-tinted borders */
-a.pt-link{text-decoration:none;aspect-ratio:1;border:1.5px solid rgba(219,112,147,0.18);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.16s ease,border-color 0.16s ease,box-shadow 0.16s ease;position:relative;min-width:0;box-shadow:0 2px 5px rgba(219,112,147,0.08)}
+a.pt-link{text-decoration:none;aspect-ratio:1;border:1.5px solid rgba(219,112,147,0.28);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.16s ease,border-color 0.16s ease,box-shadow 0.16s ease;position:relative;min-width:0;box-shadow:0 2px 5px rgba(219,112,147,0.12)}
 a.pt-link:hover{transform:scale(1.14);z-index:10;border-color:rgba(219,112,147,0.5);box-shadow:0 0 12px rgba(255,182,213,0.3),0 5px 12px rgba(219,112,147,0.12)}
 .pt-cell{aspect-ratio:1;border:1.5px solid transparent;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;background:transparent!important;box-shadow:none!important}
 .pt-num{font-size:0.5em;color:rgba(255,255,255,0.92);line-height:1;font-family:'Segoe UI',sans-serif;text-shadow:0 1px 2px rgba(0,0,0,0.5)}
@@ -303,10 +303,10 @@ a.pt-link:hover{transform:scale(1.14);z-index:10;border-color:rgba(219,112,147,0
 .pt-legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 
 /* Popup Styles — pink-tinted glassmorphism */
-.pt-popup{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(80,20,50,0.3);backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);z-index:999999;justify-content:center;align-items:center}
+.pt-popup{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(80,20,50,0.4);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);z-index:999999;justify-content:center;align-items:center}
 .pt-popup:target{display:flex}
 
-.pt-popup-content{background:rgba(35,15,25,0.88);border:2px solid rgba(255,182,213,0.25);border-radius:24px;padding:28px;width:90%;max-width:630px;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 24px 60px rgba(80,20,50,0.35),0 4px 16px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,214,232,0.12);color:#ffffff !important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;animation:pt-scaleup 0.26s cubic-bezier(0.16,1,0.3,1)}
+.pt-popup-content{background:rgba(40,16,24,0.92);border:2px solid rgba(244,167,193,0.45);border-radius:24px;padding:28px;width:90%;max-width:630px;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 24px 60px rgba(80,20,50,0.45),0 4px 16px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,214,232,0.2);color:#ffffff !important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;animation:pt-scaleup 0.26s cubic-bezier(0.16,1,0.3,1)}
 @keyframes pt-scaleup{from{opacity:0;transform:scale(0.93)}to{opacity:1;transform:scale(1)}}
 
 /* Circle Close Button — pink accent */
@@ -321,11 +321,11 @@ a.pt-popup-close:hover{background:rgba(255,182,213,0.22);color:#ffffff !importan
 .pt-detail-divider{height:1.5px;background:rgba(255,182,213,0.18);margin:18px 0 20px 0}
 .pt-detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 
-.pt-detail-card{background:rgba(255,182,213,0.06);border:1px solid rgba(255,182,213,0.12);border-radius:10px;padding:12px 14px;transition:background-color 0.2s}
-.pt-detail-card:hover{background:rgba(255,182,213,0.1)}
+.pt-detail-card{background:rgba(244,167,193,0.1);border:1px solid rgba(244,167,193,0.22);border-radius:10px;padding:12px 14px;transition:background-color 0.2s}
+.pt-detail-card:hover{background:rgba(244,167,193,0.18)}
 .pt-detail-label{font-size:0.72em;color:rgba(255,214,232,0.5);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:500}
 .pt-detail-value{font-size:0.95em;color:#ffffff !important;font-weight:600}
-.pt-detail-summary{margin-top:18px;padding:16px;background:rgba(255,182,213,0.04);border-radius:10px;border:1px solid rgba(255,182,213,0.1);font-size:0.88em;line-height:1.6;color:rgba(255,240,245,0.8)}
+.pt-detail-summary{margin-top:18px;padding:16px;background:rgba(244,167,193,0.08);border-radius:10px;border:1px solid rgba(244,167,193,0.2);font-size:0.88em;line-height:1.6;color:rgba(255,240,245,0.9)}
 
 /* Elegant Thin Scrollbar for Popup Content */
 .pt-popup-content::-webkit-scrollbar{width:6px}
@@ -335,14 +335,14 @@ a.pt-popup-close:hover{background:rgba(255,182,213,0.22);color:#ffffff !importan
 
 /* Search Result Panel — pink soft */
 .pt-search-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px;max-width:980px}
-.pt-search-result-box{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(255,214,232,0.12);border:1px solid rgba(219,112,147,0.15);border-radius:12px;padding:12px 14px;font-family:'Segoe UI',sans-serif;color:var(--text-color);box-sizing:border-box;min-width:0}
+.pt-search-result-box{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(252,228,236,0.45);border:1px solid rgba(219,112,147,0.28);border-radius:12px;padding:12px 14px;font-family:'Segoe UI',sans-serif;color:var(--text-color);box-sizing:border-box;min-width:0}
 .pt-search-info{display:flex;align-items:center;gap:14px;font-size:0.92em;flex-grow:1}
 .pt-search-badge{width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);flex-shrink:0}
 .pt-search-details{display:flex;flex-direction:column;min-width:0}
 .pt-search-title{font-weight:700;font-size:1.05em;color:var(--text-color)}
 .pt-search-subtitle{font-size:0.8em;color:color-mix(in srgb, var(--text-color) 60%, transparent);margin-top:2px;line-height:1.35}
-a.pt-search-button{text-decoration:none!important;color:var(--text-color)!important;background:rgba(255,182,213,0.15);border:1px solid rgba(219,112,147,0.2);padding:8px 16px;border-radius:10px;font-size:0.82em;font-weight:600;transition:all 0.2s ease;flex-shrink:0;box-shadow:0 2px 5px rgba(219,112,147,0.08)}
-a.pt-search-button:hover{background:rgba(255,182,213,0.28);border-color:rgba(219,112,147,0.35);transform:translateY(-1px);box-shadow:0 4px 10px rgba(219,112,147,0.12)}
+a.pt-search-button{text-decoration:none!important;color:var(--text-color)!important;background:rgba(248, 187, 208, 0.38);border:1px solid rgba(219, 112, 147, 0.42);padding:8px 16px;border-radius:10px;font-size:0.82em;font-weight:600;transition:all 0.2s ease;flex-shrink:0;box-shadow:0 2px 5px rgba(219,112,147,0.08)}
+a.pt-search-button:hover{background:rgba(244, 167, 193, 0.5);border-color:rgba(219,112,147,0.5);transform:translateY(-1px);box-shadow:0 4px 10px rgba(219,112,147,0.12)}
 
 .pt-mobile-list{display:none}
 .pt-mobile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin-top:12px}
@@ -611,14 +611,14 @@ if menu == "🏠 Beranda":
 
     # --- Beranda CSS — Tema pastel pink -----
     st.markdown("""<style>
-    .beranda-hero{background:linear-gradient(135deg,rgba(255,214,232,0.45) 0%,rgba(255,241,246,0.65) 50%,rgba(232,222,255,0.35) 100%);border:1.5px solid rgba(219,112,147,0.15);border-radius:18px;padding:38px 34px 30px;margin-bottom:24px;position:relative;overflow:hidden}
+    .beranda-hero{background:linear-gradient(135deg, rgba(248, 187, 208, 0.55), rgba(255, 240, 246, 0.85), rgba(241, 230, 255, 0.45));border:1.5px solid rgba(219, 112, 147, 0.28);border-radius:18px;padding:38px 34px 30px;margin-bottom:24px;position:relative;overflow:hidden}
     .beranda-hero::before{content:'⚛️';position:absolute;right:-18px;top:-18px;font-size:8rem;opacity:0.06;pointer-events:none}
     .beranda-hero-title{font-size:2.4rem;font-weight:800;color:var(--text-color);margin:0 0 4px;font-family:'Segoe UI',sans-serif;line-height:1.15}
     .beranda-hero-sub{font-size:1.05rem;font-weight:600;color:color-mix(in srgb,var(--text-color) 68%,transparent);margin:0 0 14px;font-family:'Segoe UI',sans-serif}
     .beranda-hero-desc{font-size:0.92rem;color:color-mix(in srgb,var(--text-color) 72%,transparent);line-height:1.65;margin:0 0 18px;max-width:680px;font-family:'Segoe UI',sans-serif}
-    .beranda-badge{display:inline-block;background:rgba(255,182,213,0.18);border:1px solid rgba(219,112,147,0.2);border-radius:20px;padding:5px 14px;font-size:0.78rem;font-weight:600;color:color-mix(in srgb,var(--text-color) 65%,transparent);letter-spacing:0.3px;font-family:'Segoe UI',sans-serif}
-    .beranda-card{background:rgba(255,214,232,0.1);border:1.5px solid rgba(219,112,147,0.12);border-radius:14px;padding:22px 20px;height:100%;box-sizing:border-box;transition:border-color 0.2s,transform 0.2s}
-    .beranda-card:hover{border-color:rgba(219,112,147,0.3);transform:translateY(-2px);box-shadow:0 4px 12px rgba(219,112,147,0.08)}
+    .beranda-badge{display:inline-block;background:rgba(255,182,213,0.25);border:1px solid rgba(219,112,147,0.3);border-radius:20px;padding:5px 14px;font-size:0.78rem;font-weight:600;color:color-mix(in srgb,var(--text-color) 65%,transparent);letter-spacing:0.3px;font-family:'Segoe UI',sans-serif}
+    .beranda-card{background:rgba(252, 228, 236, 0.45);border:1.5px solid rgba(219, 112, 147, 0.22);border-radius:14px;padding:22px 20px;height:100%;box-sizing:border-box;transition:all 0.2s}
+    .beranda-card:hover{background:rgba(248, 187, 208, 0.38);border-color:rgba(219, 112, 147, 0.45);transform:translateY(-2px);box-shadow:0 6px 18px rgba(219, 112, 147, 0.14)}
     .beranda-card-icon{font-size:1.6rem;margin-bottom:8px}
     .beranda-card-title{font-size:1rem;font-weight:700;color:var(--text-color);margin-bottom:6px;font-family:'Segoe UI',sans-serif}
     .beranda-card-text{font-size:0.85rem;color:color-mix(in srgb,var(--text-color) 65%,transparent);line-height:1.55;font-family:'Segoe UI',sans-serif}
@@ -1418,3 +1418,4 @@ elif menu == "💧 Pengenceran":
                 ]))
                 
                 st.info(f"Dibutuhkan larutan dengan konsentrasi {format_decimal(M1_calc, 4)} M. Diambil {format_decimal(V1_m1, 2)} mL larutan, kemudian encerkan hingga volume akhir {format_decimal(V2_m1, 2)} mL.")
+                
