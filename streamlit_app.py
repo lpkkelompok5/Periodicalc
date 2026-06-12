@@ -11,10 +11,27 @@ st.set_page_config(
 )
 
 # ==========================
-# GLOBAL CUSTOM STYLES (Theme-Adaptive Grayscale, Glassmorphism, Modern Sidebar)
+# GLOBAL CUSTOM STYLES — Tema pastel pink aplikasi
 # ==========================
 st.markdown("""<style>
-/* Modern Grayscale Sidebar Navigation Styling */
+/* ========== Tema Pastel Pink Global ========== */
+
+:root, [data-testid="stAppViewContainer"], [data-testid="stSidebar"] {
+    --primary-color: rgb(219, 112, 147) !important;
+    --primary-color-hover: rgb(255, 182, 213) !important;
+}
+
+/* Background halaman — pink sangat muda */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(180deg, rgba(255,228,240,0.3) 0%, rgba(255,241,246,0.2) 50%, rgba(255,255,255,0.1) 100%) !important;
+}
+
+/* Sidebar — nuansa pastel pink */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, rgba(255,214,232,0.22) 0%, rgba(248,220,235,0.12) 100%) !important;
+}
+
+/* Modern Pink Sidebar Navigation Styling */
 div[data-testid="stSidebar"] div[data-testid="stRadio"] > label {
     font-size: 0.9em !important;
     font-weight: 700 !important;
@@ -31,8 +48,8 @@ div[data-testid="stSidebar"] div[data-testid="stRadio"] > div {
     background: transparent !important;
 }
 div[data-testid="stSidebar"] label[data-baseweb="radio"] {
-    background: color-mix(in srgb, var(--text-color) 4%, transparent) !important;
-    border: 1px solid color-mix(in srgb, var(--text-color) 10%, transparent) !important;
+    background: rgba(255,214,232,0.15) !important;
+    border: 1px solid rgba(219,112,147,0.15) !important;
     border-radius: 12px !important;
     padding: 12px 16px !important;
     margin: 0px !important;
@@ -54,24 +71,213 @@ div[data-testid="stSidebar"] label[data-baseweb="radio"] > div:last-child {
     font-weight: 500 !important;
     font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif !important;
 }
-/* Active Sidebar Button Styling */
+/* Active Sidebar Button — pink soft highlight */
 div[data-testid="stSidebar"] label[data-baseweb="radio"]:has(input:checked) {
-    background: color-mix(in srgb, var(--text-color) 8%, transparent) !important;
-    border-color: color-mix(in srgb, var(--text-color) 25%, transparent) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    background: rgba(255,182,213,0.25) !important;
+    border-color: rgba(219,112,147,0.35) !important;
+    box-shadow: 0 4px 12px rgba(219,112,147,0.1) !important;
     transform: translateX(4px) !important;
 }
 div[data-testid="stSidebar"] label[data-baseweb="radio"]:has(input:checked) > div:last-child {
     font-weight: 600 !important;
 }
-/* Hover State */
+/* Hover State — pink muda */
 div[data-testid="stSidebar"] label[data-baseweb="radio"]:hover {
-    background: color-mix(in srgb, var(--text-color) 6%, transparent) !important;
-    border-color: color-mix(in srgb, var(--text-color) 18%, transparent) !important;
+    background: rgba(255,214,232,0.25) !important;
+    border-color: rgba(219,112,147,0.25) !important;
     transform: translateX(2px) !important;
 }
 
-/* Grayscale layout style for Periodic Table */
+/* ========== Tombol / Button — rose pastel ========== */
+[data-testid="stAppViewContainer"] button,
+[data-testid="stSidebar"] button {
+    background: rgba(255,182,213,0.18) !important;
+    border: 1px solid rgba(219,112,147,0.22) !important;
+    border-radius: 10px !important;
+    color: var(--text-color) !important;
+    transition: all 0.2s ease !important;
+}
+[data-testid="stAppViewContainer"] button:hover,
+[data-testid="stSidebar"] button:hover {
+    background: rgba(255,182,213,0.32) !important;
+    border-color: rgba(219,112,147,0.38) !important;
+    box-shadow: 0 3px 10px rgba(219,112,147,0.12) !important;
+}
+[data-testid="stAppViewContainer"] button:active,
+[data-testid="stSidebar"] button:active {
+    background: rgba(255,182,213,0.45) !important;
+    transform: scale(0.98) !important;
+}
+
+/* ========== Tabel hasil — header pink muda ========== */
+[data-testid="stAppViewContainer"] table thead th {
+    background: rgba(255,214,232,0.3) !important;
+    border-bottom: 2px solid rgba(219,112,147,0.2) !important;
+    color: var(--text-color) !important;
+}
+[data-testid="stAppViewContainer"] table {
+    border: 1px solid rgba(219,112,147,0.15) !important;
+    border-radius: 8px !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+[data-testid="stAppViewContainer"] table tbody tr {
+    transition: background-color 0.15s ease !important;
+}
+[data-testid="stAppViewContainer"] table tbody tr:hover {
+    background-color: rgba(255, 214, 232, 0.15) !important;
+}
+[data-testid="stAppViewContainer"] table td {
+    color: var(--text-color) !important;
+    border-bottom: 1px solid rgba(219, 112, 147, 0.1) !important;
+}
+
+/* ========== Expander Custom Pink Styling ========== */
+div[data-testid="stExpander"] {
+    border: 1.5px solid rgba(219, 112, 147, 0.2) !important;
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(219, 112, 147, 0.03) !important;
+}
+div[data-testid="stExpander"] details summary {
+    background-color: rgba(255, 214, 232, 0.15) !important;
+    color: var(--text-color) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    border-bottom: none !important;
+}
+div[data-testid="stExpander"] details summary:hover {
+    background-color: rgba(255, 182, 213, 0.25) !important;
+}
+div[data-testid="stExpander"] details summary svg {
+    color: rgba(219, 112, 147, 0.8) !important;
+    fill: rgba(219, 112, 147, 0.8) !important;
+}
+div[data-testid="stExpander"] details[open] summary {
+    border-radius: 12px 12px 0 0 !important;
+    border-bottom: 1.5px solid rgba(219, 112, 147, 0.15) !important;
+}
+
+/* ========== Tabs — pink accent ========== */
+[data-testid="stAppViewContainer"] .stTabs [data-baseweb="tab-list"] {
+    border-bottom: 2px solid rgba(219, 112, 147, 0.15) !important;
+}
+[data-testid="stAppViewContainer"] button[data-baseweb="tab"] {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    color: var(--text-color) !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+[data-testid="stAppViewContainer"] button[data-baseweb="tab"]:hover {
+    color: rgb(219, 112, 147) !important;
+    background-color: rgba(255, 214, 232, 0.15) !important;
+}
+[data-testid="stAppViewContainer"] button[data-baseweb="tab"][aria-selected="true"] {
+    color: rgb(219, 112, 147) !important;
+    font-weight: 700 !important;
+}
+[data-testid="stAppViewContainer"] div[data-baseweb="tab-highlight"] {
+    background-color: rgb(219, 112, 147) !important;
+}
+
+/* ========== Input & Widget Borders and Focus ========== */
+[data-testid="stAppViewContainer"] div[data-baseweb="input"],
+[data-testid="stAppViewContainer"] div[data-baseweb="select"],
+[data-testid="stAppViewContainer"] div[data-baseweb="textarea"] {
+    border: 1.5px solid rgba(219, 112, 147, 0.18) !important;
+    border-radius: 8px !important;
+    background-color: rgba(255, 255, 255, 0.65) !important;
+    transition: all 0.2s ease !important;
+}
+[data-testid="stAppViewContainer"] div[data-baseweb="input"]:hover,
+[data-testid="stAppViewContainer"] div[data-baseweb="select"]:hover,
+[data-testid="stAppViewContainer"] div[data-baseweb="textarea"]:hover {
+    border-color: rgba(219, 112, 147, 0.35) !important;
+}
+[data-testid="stAppViewContainer"] div[data-baseweb="input"]:focus-within,
+[data-testid="stAppViewContainer"] div[data-baseweb="select"]:focus-within,
+[data-testid="stAppViewContainer"] div[data-baseweb="textarea"]:focus-within {
+    border-color: rgba(219, 112, 147, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(255, 182, 213, 0.2) !important;
+}
+[data-testid="stAppViewContainer"] input,
+[data-testid="stAppViewContainer"] textarea {
+    border: none !important;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
+
+[data-testid="stNumberInput"] button {
+    border-color: rgba(219, 112, 147, 0.2) !important;
+    background-color: rgba(255, 182, 213, 0.1) !important;
+    color: rgb(219, 112, 147) !important;
+}
+[data-testid="stNumberInput"] button:hover {
+    background-color: rgba(255, 182, 213, 0.25) !important;
+    border-color: rgba(219, 112, 147, 0.4) !important;
+}
+
+/* ========== Alert Boxes Custom Pink Theme ========== */
+div[data-testid="stAlert"] {
+    background-color: rgba(255, 235, 243, 0.55) !important;
+    color: var(--text-color) !important;
+    border: 1px solid rgba(219, 112, 147, 0.25) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(219, 112, 147, 0.03) !important;
+}
+div[data-testid="stAlert"] p, div[data-testid="stAlert"] li, div[data-testid="stAlert"] span {
+    color: var(--text-color) !important;
+}
+div[data-testid="stAlert"]:has(div[aria-label="Success"]) {
+    background-color: rgba(255, 235, 243, 0.65) !important;
+    border-color: rgba(219, 112, 147, 0.4) !important;
+}
+div[data-testid="stAlert"]:has(div[aria-label="Info"]) {
+    background-color: rgba(243, 235, 255, 0.6) !important; /* lavender-pink */
+    border-color: rgba(159, 122, 234, 0.35) !important;
+}
+div[data-testid="stAlert"]:has(div[aria-label="Warning"]) {
+    background-color: rgba(255, 240, 230, 0.6) !important; /* peach-pink */
+    border-color: rgba(255, 177, 66, 0.35) !important;
+}
+div[data-testid="stAlert"]:has(div[aria-label="Error"]) {
+    background-color: rgba(255, 220, 220, 0.6) !important; /* light reddish-pink */
+    border-color: rgba(255, 107, 107, 0.35) !important;
+}
+
+/* Title, Header Accents and Dividers */
+h1, h2, h3 {
+    color: #4a1525 !important;
+}
+h1 {
+    border-bottom: 2px solid rgba(219, 112, 147, 0.2) !important;
+    padding-bottom: 8px !important;
+}
+h2 {
+    border-left: 4px solid rgba(219, 112, 147, 0.5) !important;
+    padding-left: 10px !important;
+}
+hr {
+    border-color: rgba(219, 112, 147, 0.2) !important;
+}
+
+/* Global Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(219, 112, 147, 0.25);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(219, 112, 147, 0.45);
+}
+
+/* ========== Tabel Periodik layout ========== */
 .pt-container{background:transparent;padding:5px 0px;margin-bottom:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%}
 .pt-table-grid{min-width:800px;padding:12px 14px 14px;box-sizing:border-box}
 .pt-title{color:var(--text-color);font-size:1.6rem;font-weight:700;margin-bottom:6px;font-family:'Segoe UI',sans-serif}
@@ -84,63 +290,63 @@ div[data-testid="stSidebar"] label[data-baseweb="radio"]:hover {
 .pt-spacer-row{height:10px;margin-bottom:0}
 .pt-spacer-row .pt-cell,.pt-spacer-row a.pt-link{background:transparent!important;border:none!important;box-shadow:none!important;pointer-events:none}
 
-/* Grid elements with adaptive grayscale borders */
-a.pt-link{text-decoration:none;aspect-ratio:1;border:1.5px solid color-mix(in srgb, var(--text-color) 22%, transparent);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.16s ease,border-color 0.16s ease,box-shadow 0.16s ease;position:relative;min-width:0;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-a.pt-link:hover{transform:scale(1.14);z-index:10;border-color:var(--text-color);box-shadow:0 0 12px color-mix(in srgb, var(--text-color) 32%, transparent),0 5px 12px rgba(0,0,0,0.14)}
+/* Grid elements with pink-tinted borders */
+a.pt-link{text-decoration:none;aspect-ratio:1;border:1.5px solid rgba(219,112,147,0.18);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform 0.16s ease,border-color 0.16s ease,box-shadow 0.16s ease;position:relative;min-width:0;box-shadow:0 2px 5px rgba(219,112,147,0.08)}
+a.pt-link:hover{transform:scale(1.14);z-index:10;border-color:rgba(219,112,147,0.5);box-shadow:0 0 12px rgba(255,182,213,0.3),0 5px 12px rgba(219,112,147,0.12)}
 .pt-cell{aspect-ratio:1;border:1.5px solid transparent;border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;background:transparent!important;box-shadow:none!important}
 .pt-num{font-size:0.5em;color:rgba(255,255,255,0.92);line-height:1;font-family:'Segoe UI',sans-serif;text-shadow:0 1px 2px rgba(0,0,0,0.5)}
 .pt-sym{font-size:0.85em;font-weight:800;color:#fff;line-height:1.2;text-shadow:0 1px 3px rgba(0,0,0,0.55);font-family:'Segoe UI',sans-serif}
 
-/* Legend section */
-.pt-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;padding-top:14px;border-top:1px solid color-mix(in srgb, var(--text-color) 15%, transparent)}
+/* Legend section — pink border */
+.pt-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;padding-top:14px;border-top:1px solid rgba(219,112,147,0.15)}
 .pt-legend-item{display:flex;align-items:center;gap:6px;font-size:0.72em;color:color-mix(in srgb, var(--text-color) 75%, transparent);font-family:'Segoe UI',sans-serif}
 .pt-legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 
-/* iOS Glassmorphism Popup Styles */
-.pt-popup{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.35);backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);z-index:999999;justify-content:center;align-items:center}
+/* Popup Styles — pink-tinted glassmorphism */
+.pt-popup{display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(80,20,50,0.3);backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);z-index:999999;justify-content:center;align-items:center}
 .pt-popup:target{display:flex}
 
-.pt-popup-content{background:rgba(22,22,22,0.82);border:2px solid rgba(255,255,255,0.22);border-radius:24px;padding:28px;width:90%;max-width:630px;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 24px 60px rgba(0,0,0,0.4),0 4px 16px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,255,255,0.15);color:#ffffff !important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;animation:pt-scaleup 0.26s cubic-bezier(0.16,1,0.3,1)}
+.pt-popup-content{background:rgba(35,15,25,0.88);border:2px solid rgba(255,182,213,0.25);border-radius:24px;padding:28px;width:90%;max-width:630px;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 24px 60px rgba(80,20,50,0.35),0 4px 16px rgba(0,0,0,0.2),inset 0 1px 0 rgba(255,214,232,0.12);color:#ffffff !important;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;animation:pt-scaleup 0.26s cubic-bezier(0.16,1,0.3,1)}
 @keyframes pt-scaleup{from{opacity:0;transform:scale(0.93)}to{opacity:1;transform:scale(1)}}
 
-/* Circle Close Button inside dark glass */
-a.pt-popup-close{position:absolute;top:20px;right:20px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.65) !important;text-decoration:none !important;transition:all 0.2s ease;cursor:pointer}
-a.pt-popup-close:hover{background:rgba(255,255,255,0.2);color:#ffffff !important;transform:scale(1.05)}
+/* Circle Close Button — pink accent */
+a.pt-popup-close{position:absolute;top:20px;right:20px;width:32px;height:32px;border-radius:50%;background:rgba(255,182,213,0.1);border:1px solid rgba(255,182,213,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,214,232,0.65) !important;text-decoration:none !important;transition:all 0.2s ease;cursor:pointer}
+a.pt-popup-close:hover{background:rgba(255,182,213,0.22);color:#ffffff !important;transform:scale(1.05)}
 
 /* Detail panel card items */
 .pt-detail-header{display:flex;align-items:center;gap:20px;margin-bottom:16px}
-.pt-detail-symbol{border:1.5px solid rgba(255,255,255,0.25);border-radius:14px;width:85px;height:85px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.2);flex-shrink:0}
+.pt-detail-symbol{border:1.5px solid rgba(255,182,213,0.3);border-radius:14px;width:85px;height:85px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(80,20,50,0.2);flex-shrink:0}
 .pt-detail-name{font-size:1.6em;font-weight:700;color:#ffffff !important;line-height:1.2}
-.pt-detail-sub{font-size:0.9em;color:rgba(255,255,255,0.65);margin-top:4px}
-.pt-detail-divider{height:1.5px;background:rgba(255,255,255,0.15);margin:18px 0 20px 0}
+.pt-detail-sub{font-size:0.9em;color:rgba(255,214,232,0.65);margin-top:4px}
+.pt-detail-divider{height:1.5px;background:rgba(255,182,213,0.18);margin:18px 0 20px 0}
 .pt-detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 
-.pt-detail-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;transition:background-color 0.2s}
-.pt-detail-card:hover{background:rgba(255,255,255,0.08)}
-.pt-detail-label{font-size:0.72em;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:500}
+.pt-detail-card{background:rgba(255,182,213,0.06);border:1px solid rgba(255,182,213,0.12);border-radius:10px;padding:12px 14px;transition:background-color 0.2s}
+.pt-detail-card:hover{background:rgba(255,182,213,0.1)}
+.pt-detail-label{font-size:0.72em;color:rgba(255,214,232,0.5);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;font-weight:500}
 .pt-detail-value{font-size:0.95em;color:#ffffff !important;font-weight:600}
-.pt-detail-summary{margin-top:18px;padding:16px;background:rgba(255,255,255,0.03);border-radius:10px;border:1px solid rgba(255,255,255,0.08);font-size:0.88em;line-height:1.6;color:rgba(255,255,255,0.8)}
+.pt-detail-summary{margin-top:18px;padding:16px;background:rgba(255,182,213,0.04);border-radius:10px;border:1px solid rgba(255,182,213,0.1);font-size:0.88em;line-height:1.6;color:rgba(255,240,245,0.8)}
 
 /* Elegant Thin Scrollbar for Popup Content */
 .pt-popup-content::-webkit-scrollbar{width:6px}
 .pt-popup-content::-webkit-scrollbar-track{background:transparent}
-.pt-popup-content::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.25);border-radius:3px}
-.pt-popup-content::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.45)}
+.pt-popup-content::-webkit-scrollbar-thumb{background:rgba(255,182,213,0.3);border-radius:3px}
+.pt-popup-content::-webkit-scrollbar-thumb:hover{background:rgba(255,182,213,0.5)}
 
-/* Clean Grayscale Search Result Panel */
+/* Search Result Panel — pink soft */
 .pt-search-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:12px;max-width:980px}
-.pt-search-result-box{display:flex;align-items:center;justify-content:space-between;gap:14px;background:color-mix(in srgb, var(--text-color) 3%, transparent);border:1px solid color-mix(in srgb, var(--text-color) 10%, transparent);border-radius:12px;padding:12px 14px;font-family:'Segoe UI',sans-serif;color:var(--text-color);box-sizing:border-box;min-width:0}
+.pt-search-result-box{display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(255,214,232,0.12);border:1px solid rgba(219,112,147,0.15);border-radius:12px;padding:12px 14px;font-family:'Segoe UI',sans-serif;color:var(--text-color);box-sizing:border-box;min-width:0}
 .pt-search-info{display:flex;align-items:center;gap:14px;font-size:0.92em;flex-grow:1}
 .pt-search-badge{width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);flex-shrink:0}
 .pt-search-details{display:flex;flex-direction:column;min-width:0}
 .pt-search-title{font-weight:700;font-size:1.05em;color:var(--text-color)}
 .pt-search-subtitle{font-size:0.8em;color:color-mix(in srgb, var(--text-color) 60%, transparent);margin-top:2px;line-height:1.35}
-a.pt-search-button{text-decoration:none!important;color:var(--text-color)!important;background:color-mix(in srgb, var(--text-color) 6%, transparent);border:1px solid color-mix(in srgb, var(--text-color) 15%, transparent);padding:8px 16px;border-radius:10px;font-size:0.82em;font-weight:600;transition:all 0.2s ease;flex-shrink:0;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
-a.pt-search-button:hover{background:color-mix(in srgb, var(--text-color) 12%, transparent);border-color:color-mix(in srgb, var(--text-color) 30%, transparent);transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,0.15)}
+a.pt-search-button{text-decoration:none!important;color:var(--text-color)!important;background:rgba(255,182,213,0.15);border:1px solid rgba(219,112,147,0.2);padding:8px 16px;border-radius:10px;font-size:0.82em;font-weight:600;transition:all 0.2s ease;flex-shrink:0;box-shadow:0 2px 5px rgba(219,112,147,0.08)}
+a.pt-search-button:hover{background:rgba(255,182,213,0.28);border-color:rgba(219,112,147,0.35);transform:translateY(-1px);box-shadow:0 4px 10px rgba(219,112,147,0.12)}
 
 .pt-mobile-list{display:none}
 .pt-mobile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:10px;margin-top:12px}
-.pt-mobile-card{display:flex;align-items:center;gap:10px;text-decoration:none!important;color:var(--text-color)!important;background:color-mix(in srgb,var(--text-color) 3%,transparent);border:1px solid color-mix(in srgb,var(--text-color) 10%,transparent);border-radius:10px;padding:10px;min-width:0}
+.pt-mobile-card{display:flex;align-items:center;gap:10px;text-decoration:none!important;color:var(--text-color)!important;background:rgba(255,214,232,0.1);border:1px solid rgba(219,112,147,0.12);border-radius:10px;padding:10px;min-width:0}
 .pt-mobile-badge{width:42px;height:42px;border-radius:9px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;flex-shrink:0;border:1px solid rgba(255,255,255,0.22);text-shadow:0 1px 3px rgba(0,0,0,0.5)}
 .pt-mobile-num{font-size:0.58em;line-height:1}
 .pt-mobile-sym{font-size:1em;font-weight:800;line-height:1.05}
@@ -391,6 +597,7 @@ def make_mr_detail_table(details):
 menu = st.sidebar.radio(
     "Menu",
     [
+        "🏠 Beranda",
         "⚛️ Tabel Periodik",
         "🧪 Pembuatan Larutan",
         "💧 Pengenceran"
@@ -398,9 +605,132 @@ menu = st.sidebar.radio(
 )
 
 # ==========================
+# BERANDA
+# ==========================
+if menu == "🏠 Beranda":
+
+    # --- Beranda CSS — Tema pastel pink -----
+    st.markdown("""<style>
+    .beranda-hero{background:linear-gradient(135deg,rgba(255,214,232,0.45) 0%,rgba(255,241,246,0.65) 50%,rgba(232,222,255,0.35) 100%);border:1.5px solid rgba(219,112,147,0.15);border-radius:18px;padding:38px 34px 30px;margin-bottom:24px;position:relative;overflow:hidden}
+    .beranda-hero::before{content:'⚛️';position:absolute;right:-18px;top:-18px;font-size:8rem;opacity:0.06;pointer-events:none}
+    .beranda-hero-title{font-size:2.4rem;font-weight:800;color:var(--text-color);margin:0 0 4px;font-family:'Segoe UI',sans-serif;line-height:1.15}
+    .beranda-hero-sub{font-size:1.05rem;font-weight:600;color:color-mix(in srgb,var(--text-color) 68%,transparent);margin:0 0 14px;font-family:'Segoe UI',sans-serif}
+    .beranda-hero-desc{font-size:0.92rem;color:color-mix(in srgb,var(--text-color) 72%,transparent);line-height:1.65;margin:0 0 18px;max-width:680px;font-family:'Segoe UI',sans-serif}
+    .beranda-badge{display:inline-block;background:rgba(255,182,213,0.18);border:1px solid rgba(219,112,147,0.2);border-radius:20px;padding:5px 14px;font-size:0.78rem;font-weight:600;color:color-mix(in srgb,var(--text-color) 65%,transparent);letter-spacing:0.3px;font-family:'Segoe UI',sans-serif}
+    .beranda-card{background:rgba(255,214,232,0.1);border:1.5px solid rgba(219,112,147,0.12);border-radius:14px;padding:22px 20px;height:100%;box-sizing:border-box;transition:border-color 0.2s,transform 0.2s}
+    .beranda-card:hover{border-color:rgba(219,112,147,0.3);transform:translateY(-2px);box-shadow:0 4px 12px rgba(219,112,147,0.08)}
+    .beranda-card-icon{font-size:1.6rem;margin-bottom:8px}
+    .beranda-card-title{font-size:1rem;font-weight:700;color:var(--text-color);margin-bottom:6px;font-family:'Segoe UI',sans-serif}
+    .beranda-card-text{font-size:0.85rem;color:color-mix(in srgb,var(--text-color) 65%,transparent);line-height:1.55;font-family:'Segoe UI',sans-serif}
+    .beranda-section-title{font-size:1.1rem;font-weight:700;color:var(--text-color);margin:20px 0 6px;font-family:'Segoe UI',sans-serif}
+    .beranda-member{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(219,112,147,0.1);font-family:'Segoe UI',sans-serif}
+    .beranda-member:last-child{border-bottom:none}
+    .beranda-member-num{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,rgba(255,182,213,0.35),rgba(232,222,255,0.35));display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;color:var(--text-color);flex-shrink:0}
+    .beranda-member-name{font-size:0.88rem;color:var(--text-color);font-weight:500}
+    .beranda-member-nim{font-size:0.78rem;color:color-mix(in srgb,var(--text-color) 50%,transparent);margin-left:4px}
+    </style>""", unsafe_allow_html=True)
+
+    # --- 1. Hero Card ---
+    st.markdown("""
+    <div class="beranda-hero">
+        <div class="beranda-hero-title">Periodicalc</div>
+        <div class="beranda-hero-sub">Tabel Periodik, Pembuatan Larutan, dan Pengenceran Larutan</div>
+        <div class="beranda-hero-desc">
+            Aplikasi berbasis Python dan Streamlit untuk membantu pengguna memahami tabel periodik
+            serta melakukan perhitungan pembuatan larutan dan pengenceran larutan.
+        </div>
+        <div class="beranda-badge">Kelompok 5 • LPK 2026</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # --- 2. Tentang Aplikasi & Kelompok 5 ---
+    with st.expander("🌸 Tentang Aplikasi & Kelompok 5", expanded=False):
+        st.markdown("""
+**Selamat Datang di Periodicalc!**
+
+Periodicalc adalah aplikasi yang dirancang sebagai alat bantu interaktif untuk mempermudah pengguna
+dalam memahami tabel periodik, menghitung pembuatan larutan, dan menghitung pengenceran larutan.
+
+---
+
+**Tujuan & Kegunaan:**
+- Mengetahui bobot molekul suatu senyawa beserta karakteristiknya dalam tabel periodik.
+- Mengetahui suatu massa yang diperlukan untuk membuat suatu larutan serta cara pembuatan larutan.
+- Mengetahui konsentrasi atau volume yang diinginkan dalam pengenceran suatu larutan.
+
+---
+
+**Sumber Data:**
+
+Data unsur pada tabel periodik diambil dari sumber data online, lalu aplikasi juga memiliki data lokal
+sebagai cadangan jika data online gagal dimuat.
+
+---
+
+**Fitur Utama:**
+
+1. **Tabel Periodik** — Menampilkan data unsur kimia, detail unsur, kategori unsur, dan fitur pencarian unsur.
+2. **Pembuatan Larutan** — Menghitung Mr dari rumus molekul, lalu menghitung massa zat yang harus ditimbang berdasarkan molaritas atau normalitas.
+3. **Pengenceran** — Menghitung V₁ atau M₁ menggunakan rumus M₁V₁ = M₂V₂.
+        """)
+
+        st.markdown("---")
+        st.markdown("**Dikembangkan oleh Kelompok 5:**")
+
+        members = [
+            ("Fani Aulia Nurfauziah", "2560626"),
+            ("Fanny Arrahmah Khaerunnisa", "2560627"),
+            ("Mawaddah Dwita Pebyana", "2560668"),
+            ("Naila Syafitri Ramadhani", "2560703"),
+            ("Najma Faiza Khairiah", "2560706"),
+        ]
+        members_html = ""
+        for i, (nama, nim) in enumerate(members, 1):
+            members_html += (
+                f'<div class="beranda-member">'
+                f'<div class="beranda-member-num">{i}</div>'
+                f'<span class="beranda-member-name">{nama}</span>'
+                f'<span class="beranda-member-nim">({nim})</span>'
+                f'</div>'
+            )
+        st.markdown(members_html, unsafe_allow_html=True)
+
+    # --- 3. Feature Cards ---
+    st.markdown("<div style='height:8px'></div>", unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("""
+        <div class="beranda-card">
+            <div class="beranda-card-icon">⚛️</div>
+            <div class="beranda-card-title">Tabel Periodik</div>
+            <div class="beranda-card-text">Melihat informasi unsur dan mencari unsur berdasarkan simbol, nama, kategori, atau nomor atom.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col2:
+        st.markdown("""
+        <div class="beranda-card">
+            <div class="beranda-card-icon">🧪</div>
+            <div class="beranda-card-title">Pembuatan Larutan</div>
+            <div class="beranda-card-text">Menghitung Mr dan massa zat yang harus ditimbang berdasarkan konsentrasi dan volume larutan.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col3:
+        st.markdown("""
+        <div class="beranda-card">
+            <div class="beranda-card-icon">💧</div>
+            <div class="beranda-card-title">Pengenceran</div>
+            <div class="beranda-card-text">Menghitung volume atau konsentrasi larutan awal menggunakan rumus pengenceran.</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+# ==========================
 # TABEL PERIODIK
 # ==========================
-if menu == "⚛️ Tabel Periodik":
+elif menu == "⚛️ Tabel Periodik":
 
     df, _local_mode = load_elements()
     if _local_mode:
@@ -442,8 +772,50 @@ if menu == "⚛️ Tabel Periodik":
             return "&mdash;"
         return escape(f"{val} {unit}".strip(), quote=True)
 
+    # Terjemahan kategori ke Bahasa Indonesia
+    category_id = {
+        "alkali metal": "Logam Alkali",
+        "alkaline earth metal": "Logam Alkali Tanah",
+        "transition metal": "Logam Transisi",
+        "post-transition metal": "Logam Pasca-Transisi",
+        "metalloid": "Metaloid",
+        "nonmetal": "Nonlogam",
+        "diatomic nonmetal": "Nonlogam Diatomik",
+        "polyatomic nonmetal": "Nonlogam Poliatomik",
+        "halogen": "Halogen",
+        "noble gas": "Gas Mulia",
+        "lanthanide": "Lantanida",
+        "actinide": "Aktinida",
+        "unknown, probably transition metal": "Belum Diketahui (kemungkinan Logam Transisi)",
+        "unknown, probably post-transition metal": "Belum Diketahui (kemungkinan Logam Pasca-Transisi)",
+        "unknown, probably metalloid": "Belum Diketahui (kemungkinan Metaloid)",
+        "unknown, predicted to be noble gas": "Belum Diketahui (prediksi Gas Mulia)",
+    }
+
+    # Terjemahan fase ke Bahasa Indonesia
+    phase_id = {
+        "solid": "Padat",
+        "liquid": "Cair",
+        "gas": "Gas",
+    }
+
     def category_title(value):
-        return clean_text(str(value).title()) if value else "&mdash;"
+        if not value or (isinstance(value, float) and pd.isna(value)):
+            return "&mdash;"
+        key = str(value).lower().strip()
+        translated = category_id.get(key)
+        if translated:
+            return escape(translated, quote=True)
+        return clean_text(str(value).title())
+
+    def fmt_phase(val):
+        if val == "" or val is None or (isinstance(val, float) and pd.isna(val)):
+            return "&mdash;"
+        key = str(val).lower().strip()
+        translated = phase_id.get(key)
+        if translated:
+            return escape(translated, quote=True)
+        return escape(str(val), quote=True)
 
     def make_cell(el):
         cat = str(el["category"]).lower()
@@ -491,16 +863,15 @@ if menu == "⚛️ Tabel Periodik":
     # Legend items
     legend = (
         '<div class="pt-legend">'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(56,178,172,0.85)"></div>Nonmetal</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(255,107,107,0.85)"></div>Alkali Metal</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(255,177,66,0.85)"></div>Alkaline Earth</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(99,179,237,0.8)"></div>Transition Metal</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(130,201,30,0.8)"></div>Post-transition</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(255,212,59,0.85)"></div>Metalloid</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(159,122,234,0.85)"></div>Halogen</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(237,100,166,0.85)"></div>Noble Gas</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(246,135,179,0.8)"></div>Lanthanide</div>'
-        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(183,148,244,0.8)"></div>Actinide</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(56,178,172,0.85)"></div>Nonlogam</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(255,107,107,0.85)"></div>Logam Alkali</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(255,177,66,0.85)"></div>Logam Alkali Tanah</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(99,179,237,0.8)"></div>Logam Transisi</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(130,201,30,0.8)"></div>Logam Pasca-Transisi</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(255,212,59,0.85)"></div>Metaloid</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(237,100,166,0.85)"></div>Gas Mulia</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(246,135,179,0.8)"></div>Lantanida</div>'
+        '<div class="pt-legend-item"><div class="pt-legend-dot" style="background:rgba(183,148,244,0.8)"></div>Aktinida</div>'
         '</div>'
     )
 
@@ -524,7 +895,7 @@ if menu == "⚛️ Tabel Periodik":
 
             '<div class="pt-detail-card">'
             '<div class="pt-detail-label">Fase (STP)</div>'
-            f'<div class="pt-detail-value">{fmt(el["phase"])}</div></div>'
+            f'<div class="pt-detail-value">{fmt_phase(el["phase"])}</div></div>'
 
             '<div class="pt-detail-card">'
             '<div class="pt-detail-label">Densitas</div>'
@@ -551,13 +922,31 @@ if menu == "⚛️ Tabel Periodik":
             f'<div class="pt-detail-value" style="font-size:0.82em;text-transform:capitalize">{fmt(el["appearance"])}</div></div>'
 
             '<div class="pt-detail-card">'
-            '<div class="pt-detail-label">Penemu</div>'
+            '<div class="pt-detail-label">Ditemukan Oleh</div>'
             f'<div class="pt-detail-value" style="font-size:0.82em">{fmt(el["discovered_by"])}</div></div>'
         )
 
-        summary_html = ""
-        if el["summary"] and str(el["summary"]).strip():
-            summary_html = f'<div class="pt-detail-summary">{clean_text(el["summary"])}</div>'
+        # Buat ringkasan berbahasa Indonesia dari data unsur
+        phase_text = fmt_phase(el["phase"]).replace("&mdash;", "").strip()
+        cat_text = category_title(el["category"]).replace("&mdash;", "").strip()
+        mass_text = fmt(el["atomic_mass"], "u").replace("&mdash;", "").strip()
+
+        ringkasan_parts = [f"{name} adalah unsur kimia dengan simbol {sym} dan nomor atom {num}."]
+        if mass_text:
+            ringkasan_parts.append(f"Massa atomnya adalah {mass_text}.")
+        if cat_text:
+            ringkasan_parts.append(f"Unsur ini termasuk dalam kategori {cat_text}.")
+        if phase_text:
+            ringkasan_parts.append(f"Pada kondisi standar (STP), unsur ini berfase {phase_text}.")
+
+        ringkasan = " ".join(ringkasan_parts)
+
+        summary_html = (
+            '<div class="pt-detail-summary">'
+            '<strong style="color:rgba(255,255,255,0.65);font-size:0.85em">Ringkasan:</strong><br>'
+            f'{escape(ringkasan, quote=True)}'
+            '</div>'
+        )
 
         popup_html = (
             f'<div id="detail-{sym}" class="pt-popup">'
@@ -612,19 +1001,7 @@ if menu == "⚛️ Tabel Periodik":
         '</div>'
     )
 
-    # Render periodic table layout with wrapper to prevent cutoff
-    table_html = (
-        '<div class="pt-container">'
-        '<div class="pt-title">Tabel Periodik</div>'
-        '<div class="pt-helper">118 unsur resmi dengan kategori, nomor grup, dan periode.</div>'
-        '<div class="pt-table-grid">' + grid_html + legend + '</div>'
-        f'{mobile_html}'
-        '</div>' + all_popups_html
-    )
-    st.markdown(table_html, unsafe_allow_html=True)
-
-    # --- Search section ---
-    st.divider()
+    # --- Search section (above the table) ---
     st.subheader("🔍 Cari Unsur")
 
     cari = st.text_input("Masukkan nama atau simbol unsur")
@@ -671,6 +1048,21 @@ if menu == "⚛️ Tabel Periodik":
         else:
             st.warning("Unsur tidak ditemukan.")
 
+    st.divider()
+
+    # Render periodic table layout with wrapper to prevent cutoff
+    table_html = (
+        '<div class="pt-container">'
+        '<div class="pt-title">Tabel Periodik</div>'
+        '<div class="pt-helper">118 unsur resmi dengan kategori, nomor grup, dan periode.</div>'
+        '<div class="pt-table-grid">' + grid_html + legend + '</div>'
+        f'{mobile_html}'
+        '</div>' + all_popups_html
+    )
+    st.markdown(table_html, unsafe_allow_html=True)
+
+
+
 # ==========================
 # PEMBUATAN LARUTAN
 # ==========================
@@ -689,6 +1081,9 @@ elif menu == "🧪 Pembuatan Larutan":
 
     # MOLARITAS
     with tab1:
+
+        st.subheader("Pembuatan Larutan Molaritas")
+        st.write("Fitur ini membantu menghitung massa zat yang diperlukan untuk membuat larutan dengan konsentrasi dan volume tertentu. Cukup masukkan rumus senyawa, molaritas, dan volume larutan, kemudian sistem akan menghitung massa zat yang harus ditimbang secara otomatis.")
 
         st.latex(
             r"M=\frac{m}{Mr}\times\frac{1000}{V}"
@@ -791,6 +1186,9 @@ elif menu == "🧪 Pembuatan Larutan":
 
     # NORMALITAS
     with tab2:
+
+        st.subheader("Pembuatan Larutan Normalitas")
+        st.write("Fitur ini membantu menghitung massa zat yang diperlukan untuk membuat larutan dengan konsentrasi dan volume tertentu. Cukup masukkan rumus senyawa, normalitas, valensi, dan volume larutan, kemudian sistem akan menghitung massa zat yang harus ditimbang secara otomatis.")
 
         st.latex(
             r"N=\frac{m}{Mr\times valensi}\times\frac{1000}{V}"
@@ -920,6 +1318,8 @@ elif menu == "💧 Pengenceran":
 
     # --- TAB 1: HITUNG V1 ---
     with tab1:
+        st.subheader("Pengenceran V1")
+        st.write("Fitur ini membantu menghitung volume yang diperlukan dalam proses pengenceran larutan. Masukkan data yang diketahui, kemudian sistem akan menghitung volume yang diperlukan berdasarkan persamaan pengenceran M₁V₁ = M₂V₂.")
         st.subheader("Hitung Volume Awal (V1)")
         M1 = st.number_input(
             "Konsentrasi Awal (M1)",
@@ -968,6 +1368,8 @@ elif menu == "💧 Pengenceran":
 
     # --- TAB 2: HITUNG M1 ---
     with tab2:
+        st.subheader("Pengenceran M1")
+        st.write("Fitur ini membantu menghitung konsentrasi yang diperlukan dalam proses pengenceran larutan. Masukkan data yang diketahui, kemudian sistem akan menghitung konsentrasi yang diperlukan berdasarkan persamaan pengenceran M₁V₁ = M₂V₂.")
         st.subheader("Hitung Konsentrasi Awal (M1)")
         V1_m1 = st.number_input(
             "Volume Awal (V1) (mL)",
